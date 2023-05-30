@@ -1,0 +1,218 @@
+body {
+    
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url(../images/back.jpg)no-repeat center fixed;
+    background-size: cover;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    color: rgb(255, 255, 255);
+}
+
+.sidebar {
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, .18);
+    top: 0;
+    left: 0;
+    width:15%;
+    height: 100%;
+    overflow-y: hidden;
+    position: fixed;
+}
+
+.sidebar ::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar ::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar ::-webkit-scrollbar-thumb {
+    background: #2a2f44;
+    border-radius: 10px;
+
+}
+
+.sidebar>div {
+    height: 100%;
+    overflow-y: scroll;
+    padding: 1.7em 1em 1.7em 1em;
+
+}
+
+.sidebar a {
+    text-decoration: none;
+
+}
+
+.sidebar ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.sidebar small {
+    color: #ccc;
+}
+
+.brand {
+    display: block;
+    font-size: 1.5em;
+    color: #fff;
+    font-weight: 600;
+
+}
+
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    color: rgb(255, 255, 255);
+}
+
+.menu-heading {
+    margin: 2em o 0.5em 0;
+    padding: 1em;
+    display: block;
+
+}
+
+.sidebar ul {
+    padding-bottom: 1.5em;
+}
+
+li {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sidebar li a {
+    width: 60%;
+    color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    border-radius: .8em;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.single{
+    justify-content: start;
+
+
+}
+
+.sidebar li a.add {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .8em;
+
+}
+
+
+.tools li a:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.sidebar ul {
+    font-size: 1em;
+    margin-right: .5em;
+}
+
+hr {
+    border: 1px solid #292529;
+}
+
+.notifications li a {
+    justify-content: space-between;
+}
+
+.notifications li a :hover {
+    color: #fff;
+
+}
+
+.notifications li a div {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.badge {
+    background-color: #2a2f44;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    line-height: 20px;
+    font-size: .7em;
+    color: #fff;
+}
+
+.profile {
+    padding: 1em 1em 1.7em 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile img {
+    width: 3.5em;
+    height: 3.5em;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+}
+
+.profile h4 {
+    margin: 0 0 0.5em 0;
+
+}
+
+.logout {
+    display: grid;
+    place-content:center;
+
+}
+
+
+a.log {
+    width: 80%;
+    color: white;
+    border: 1px solid rgba(60, 59, 59, 0.905);
+    padding: 10px 20px 10px 20px;
+    display: flex;
+    border-radius: 5px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+a.log:hover {
+    transition: .1.5s ease-in-out;
+    width: 80%;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    display: flex;
+    border-radius: 5px;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 0px 0px 9px rgba(255, 255, 255, 0.5);
+}

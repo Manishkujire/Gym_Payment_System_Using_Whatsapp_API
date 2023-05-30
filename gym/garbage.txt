@@ -1,0 +1,113 @@
+
+
+
+<?php
+
+define( 'DIR', '' );
+require_once DIR . 'config.php';
+
+$control = new Controller();
+
+$admin = new Admin();
+// include 'admin.php' ;
+
+?>
+<!DOCTYPE html>
+<html lang = 'en'>
+
+<head>
+<meta charset = 'UTF-8'>
+<meta name = 'viewport' content = 'width=device-width, initial-scale=1, shrink-to-fit=no'>
+<meta name = 'description' content = 'au theme template'>
+<meta name = 'author' content = 'Hau Nguyen'>
+<meta name = 'keywords' content = 'au theme template'>
+<title>GYM management
+</title>
+<link rel = 'stylesheet' href = 'css/add.css'>
+
+</head>
+
+<body>
+<div class = 'container'>
+<form action = '' method = 'POST'>
+<h1>ADD MEMBER</h1>
+
+<div class = 'row'>
+<label>NAME</label>
+<select name = 'member' id="member"onchange="sele()" >
+<option selected disabled>Choose the member</option>
+<?php
+$query = $admin->ret( 'SELECT * FROM `members` order by `leftdate`' );
+while( $player = $query->fetch( PDO::FETCH_ASSOC ) ) {
+    ?>
+    <option value = '<?php echo $player['gid'];?>'>
+    <?php echo $player[ 'gid' ].' '.$player[ 'name' ];
+    ?>
+    </option>
+    <?php }
+    ?>
+    </select>
+    </div>
+    <div class = 'row'>
+        <label>PHONE NUMBER</label>
+        <input type = 'text' id = 'ss' name = 'phone'value = '234354'>
+        </div>
+
+    <div class = 'row'>
+    <button class = 'btn' id='check' name = 'check' onclick='checkdatabtn()'type = 'submit'>CHECK DATA</button><br><br>
+    </div>
+    <script type = 'text/javascript' src = 'script.js'></script>
+
+    <?php
+    if ( isset( $_POST[ 'member' ] ) ) {
+        ?>
+  <script>var a = document.getElementById('a');
+var s = document.getElementById('ss');
+var b = document.getElementById('b');
+var c = document.getElementById('c');
+var d = document.getElementById('d');</script>
+        <?php
+
+        $id = $_COOKIE[ 'cname' ];
+        echo $id;
+        $q = $admin->ret( "SELECT * FROM `members` where gid ='$id'" );
+        $row = $q->fetch( PDO::FETCH_ASSOC );
+        ?>
+
+        <div class = 'row'>
+        <label>PHONE NUMBER</label>
+        <input type = 'text' id = 'a' readonly = ''name = 'phone'value = '<?php echo $row['phone']?>'readonly = ''>
+        </div>
+
+        <div class = 'row'>
+        <label>PDATE</label>
+        <input type = 'text'  id='b'name = 'paydate' value = "<?php $row['paydate'];?>"readonly = '' >
+        </div>
+        <div class = 'row'>
+        <label>EDATE</label>
+        <input type = 'date' id='c'name = 'enddate'value = "<?php $row['enddate'];?>"readonly = '' >
+        </div>
+        <div class = 'row'>
+        <label>LEFT</label>
+        <input type = 'text'id='d' name = 'leftdate'value = "<?php $row['leftdate'];?>"readonly = '' >
+        </div>
+        <div class = 'row'>
+
+        <label>ADD days</label>
+        <input class = 'newdate' type = 'number' name = 'adddate' >
+        </div>
+        <?php }
+        ?>
+
+        </form>
+
+        </div>
+        </body>
+        </html>
+
+
+        // a.value='<?php echo $row['phone']?>'
+    // console.log('<?php echo $row['phone']?>')
+    // b.value='<?php echo $row['paydate']?>'
+    // c.value='<?php echo $row['enddate']?>'
+    // d.value='<?php echo $row['leftdate']?>'
